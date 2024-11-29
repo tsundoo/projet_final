@@ -31,44 +31,88 @@ body {
 	}
 }
 
-/* body {
-    background-color: #DCD9D4;
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
-    background-blend-mode: soft-light,screen;
-} */
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    flex: 1 0 auto;
 }
+
 
 /* Navbar styles */
 .navbar {
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
-    padding: 1rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 .nav-logo {
     height: 65px;
     width: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
+.navbar a:hover {
+    background: linear-gradient(45deg, #ee7752, #dc4780, #23a6d5, #23d5ab);
+    background-size: 200% 200%;
+    animation: gradientBg 3s ease infinite;
+    transform: translateY(-2px);
+}
 
 .nav-links {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.nav-brand a:hover {
+    background: none;
+    transform: none;
+}
+
+.nav-brand a::after {
+    display: none;
+}
+
+@keyframes gradientBg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(45deg, #ee7752, #dc4780);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
 }
 
 /* Post styles */
@@ -239,7 +283,6 @@ button:hover {
     padding: 0.5rem;
     text-align: center;
     width: 100%;
-    margin-top: auto;
 }
 
 /* Edit Post */
