@@ -66,7 +66,7 @@ exports.loginUser = async (req, res) => {
                     email: user.email 
                 } 
             });
-        } catch (error) {
-        res.status(500).send({ message: error.message });
-    }
+        } catch (error) { 
+            res.status(500).json({ message: error.message });
+        }
 }

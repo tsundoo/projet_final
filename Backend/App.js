@@ -8,6 +8,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 
+
 // CORS configuration
 app.use(cors({
     origin: 'http://localhost:3000', // Your React app URL
@@ -18,6 +19,7 @@ app.use(cors({
 
 // middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(helmet({
     crossOriginResourcePolicy: {
         policy: 'cross-origin'
