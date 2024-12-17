@@ -5,6 +5,8 @@ import { postService } from '../../services/post.service';
 import { commentService } from '../../services/comment.service';
 import CommentList from '../Comments/CommentList';
 import CommentForm from '../Comments/CommentForm';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const PostDetail = () => {
     const [post, setPost] = useState(null);
@@ -87,10 +89,10 @@ const PostDetail = () => {
             {user && (user._id === post.author._id || user.id === post.author._id) && (
                 <div className="post-actions">
                     <button onClick={() => navigate(`/edit-post/${post._id}`)}>
-                        Edit Post
+                        <FontAwesomeIcon icon={faEdit} />
                     </button>
                     <button onClick={handleDelete} className="delete-btn">
-                        Delete Post
+                        <FontAwesomeIcon icon={faTrash} />
                     </button>
                 </div>
             )}

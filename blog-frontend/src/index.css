@@ -188,10 +188,24 @@ button:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.post-detail h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: double 4px #333;
+    border-radius: 8px;
+    padding: 10px;
+}
+
 .post-meta {
     color: #666;
     margin: 10px 0;
     display: flex;
+    justify-content: space-between;
     gap: 20px;
 }
 
@@ -290,8 +304,31 @@ button:hover {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.edit-post h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Create Post */
+.create-post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.create-post h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+    
 /* Form Improvements */
 .form-group small {
     color: #666;
@@ -307,3 +344,19 @@ button:hover {
     border-radius: 4px;
 }
 
+
+
+/* Media queries for different screen sizes */
+@media screen and (max-width: 768px) {
+    .post-detail h1 {
+        font-size: 1.5rem; /* Tablet size */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-detail h1 {
+        font-size: 1.25rem; /* Mobile size */
+        letter-spacing: 0.5px;
+        margin-bottom: 15px;
+    }
+}
